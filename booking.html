@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حجز موعد - فريق بادر التطوعي</title>
+    <link rel="stylesheet" href="css/booking.css">
+</head>
+<body>
+    <header>
+        <h1>حجز موعد طبي</h1>
+    </header>
+
+    <section class="booking-form">
+        <h2>حجز موعد</h2>
+        <form id="bookingForm">
+            <label for="name">الاسم الكامل:</label>
+            <input type="text" id="name" placeholder="أدخل اسمك الكامل" required>
+
+            <label for="phone">رقم الهاتف:</label>
+            <input type="tel" id="phone" placeholder="أدخل رقم هاتفك" required>
+
+            <label for="doctor">اختر الطبيب:</label>
+            <select id="doctor" required>
+                <option value="" disabled selected>اختر الطبيب</option>
+                <option value="زهير علي">الدكتور زهير علي</option>
+                <option value="علاء خضور">الدكتور علاء خضور</option>
+                <option value="مايا عيسى">الدكتورة مايا عيسى</option>
+                <option value="الربيع عبيد">الدكتور الربيع عبيد</option>
+            </select>
+
+            <label for="time">اختر الموعد:</label>
+            <input type="datetime-local" id="time" required>
+
+            <button type="submit">احجز الموعد</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>للاستفسارات: 0985147386 | 0936274872</p>
+    </footer>
+
+    
+      <!-- ... (الأكواد السابقة) ... -->
+<script>
+  fetch('https://formspree.io/f/your-form-id', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+        name: name,
+        phone: phone,
+        doctor: doctor,
+        time: time,
+        _replyto: 'nsrenooozoz@gmail.com' // البريد المستقبل
+    }),
+})
+</script>
+
+</body>
+</html>
